@@ -9,7 +9,7 @@
     <div class="container">
     	<div class="row">
             <div class="col-md-6">
-        		<h2>Custom search field</h2>
+        		<h2>投稿を検索</h2>
                 <div id="custom-search-input">
                     <div class="input-group col-md-12">
                         <form action="{{ route('posts.search') }}" method="GET">
@@ -32,7 +32,7 @@
     
     <body class="antianliased">
         <h1>投稿一覧</h1>
-        <a href='/posts/create'>create</a>
+        <a href='/posts/create'>投稿作成</a>
         <div class='posts'>
             @foreach ($posts as $post)
                 <div class='post'>
@@ -43,7 +43,7 @@
                     <form action="/posts/{{ $post->id }}" id="form_{{ $post->id }}" method="post">
                         @csrf
                         @method('DELETE')
-                        <button type="button" onclick="deletePost({{ $post->id }})">delete</button> 
+                        <button type="button" onclick="deletePost({{ $post->id }})">投稿を削除</button> 
                     </form>
                 </div>
             @endforeach
